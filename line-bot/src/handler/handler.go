@@ -27,7 +27,7 @@ func LineHandler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyR
 	var tmpReplyMessage string
 	tmpReplyMessage = "回答：" + myLineRequest.Events[0].Message.Text
 	if _, err = bot.ReplyMessage(myLineRequest.Events[0].ReplyToken, linebot.NewTextMessage(tmpReplyMessage)).Do(); err != nil {
-    log.Println("tmpre@lay err")
+    log.Printf("%+v\n",myLineRequest)
 		log.Fatal(err)
 	}
 	return events.APIGatewayProxyResponse{
