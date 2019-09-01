@@ -51,12 +51,12 @@ func MakeMessge(id, str string) string {
 		}
 		return res
 	}
-
+  log.Println("ぉっl")
 	repMessage := []string{
 		"できたのはすごいね",
 		"はやばすぎる",
 		"もうオンリーワンだね",
 	}
 	repository.SetHome(&repository.Home{ID: id, Value: str})
-	return "「" + repMessage[int(time.Now().UnixNano())/len(repMessage)] + "」"
+	return "「" +str + "」" + repMessage[int(time.Now().UnixNano())/len(repMessage)]
 }
