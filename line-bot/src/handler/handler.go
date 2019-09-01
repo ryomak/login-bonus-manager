@@ -24,6 +24,8 @@ func LineHandler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyR
     log.Println(os.Getenv("channelToken"))
     log.Fatal(err)
   }
+  log.Println(os.Getenv("channelSecret"))
+  log.Println(os.Getenv("channelToken")) 
 	var tmpReplyMessage string
 	tmpReplyMessage = "回答：" + myLineRequest.Events[0].Message.Text
 	if _, err = bot.ReplyMessage(myLineRequest.Events[0].ReplyToken, linebot.NewTextMessage(tmpReplyMessage)).Do(); err != nil {
