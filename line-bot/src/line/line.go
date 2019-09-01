@@ -47,7 +47,7 @@ func MakeMessge(id, str string) string {
 		homelist := repository.GetHomeList(id)
 		res := ""
 		for _, v := range homelist {
-			res += v.Valuea + "\n"
+			res += v.Value + "\n"
 		}
 		return res
 	}
@@ -57,6 +57,6 @@ func MakeMessge(id, str string) string {
 		"はやばすぎる",
 		"もうオンリーワンだね",
 	}
-	repository.SetHome(&Home{ID: id, Value: Value})
+	repository.SetHome(&repository.Home{ID: id, Value: str})
 	return "「" + repMessage[int(time.Now().UnixNano())/len(repMessage)] + "」"
 }

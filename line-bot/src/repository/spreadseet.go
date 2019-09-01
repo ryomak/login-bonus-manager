@@ -11,7 +11,7 @@ import (
 
 type Home struct {
 	Date  string `json:"date"`
-	ID    int    `json:"id"`
+	ID    string    `json:"id"`
 	Value string `json:"value"`
 }
 
