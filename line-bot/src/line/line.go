@@ -2,6 +2,7 @@ package line
 
 import (
 	"encoding/json"
+	"log"
 	"strings"
 	"time"
 
@@ -51,12 +52,12 @@ func MakeMessge(id, str string) string {
 		}
 		return res
 	}
-  log.Println("ぉっl")
+	log.Println("ぉっl")
 	repMessage := []string{
 		"できたのはすごいね",
 		"はやばすぎる",
 		"もうオンリーワンだね",
 	}
 	repository.SetHome(&repository.Home{ID: id, Value: str})
-	return "「" +str + "」" + repMessage[int(time.Now().UnixNano())/len(repMessage)]
+	return "「" + str + "」" + repMessage[int(time.Now().UnixNano())/len(repMessage)]
 }
