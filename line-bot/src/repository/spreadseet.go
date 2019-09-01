@@ -49,5 +49,6 @@ func SetHome(home *Home) {
 		bytes.NewBuffer(j),
 	)
 	req.Header.Set("Content-Type", "application/json")
-	client.Do(req)
+	_,err =client.Do(req)
+  log.Println(err)
 }
