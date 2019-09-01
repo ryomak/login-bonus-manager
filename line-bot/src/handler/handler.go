@@ -20,8 +20,6 @@ func LineHandler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyR
 		os.Getenv("channelToken"),
 	)
   if err != nil {
-    log.Println(os.Getenv("channelSecret"))
-    log.Println(os.Getenv("channelToken"))
     log.Fatal(err)
   }
   log.Println(os.Getenv("channelSecret"))
