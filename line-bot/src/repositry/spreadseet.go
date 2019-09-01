@@ -16,7 +16,7 @@ type Home struct {
 }
 
 func GetHomeList(id string) []Home {
-	url := "https://script.google.com/macros/s/AKfycbzw_hkJwGt9NgCMOD06OaWZctk_2qWnH3RAKlNWpPlcbIVgnYiA/exec" + id
+	url := "https://script.google.com/macros/s/AKfycbzw_hkJwGt9NgCMOD06OaWZctk_2qWnH3RAKlNWpPlcbIVgnYiA/exec?id=" + id
 	client := &http.Client{Timeout: time.Duration(10) * time.Second}
 	resp, err := client.Get(url)
 	if err != nil {
@@ -36,7 +36,7 @@ func GetHomeList(id string) []Home {
 }
 
 func SetHome(home *Home) {
-	url := "https://script.google.com/macros/s/AKfycbzw_hkJwGt9NgCMOD06OaWZctk_2qWnH3RAKlNWpPlcbIVgnYiA/exec?id="
+	url := "https://script.google.com/macros/s/AKfycbzw_hkJwGt9NgCMOD06OaWZctk_2qWnH3RAKlNWpPlcbIVgnYiA/exec"
 	client := &http.Client{Timeout: time.Duration(10) * time.Second}
 	j, err := json.Marshal(home)
 	if err != nil {
