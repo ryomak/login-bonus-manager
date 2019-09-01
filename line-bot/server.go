@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/ryomak/login-bonus-manager/src/handler"
+	"github.com/ryomak/login-bonus-manager/line-bot/src/handler"
 )
 
 func main() {

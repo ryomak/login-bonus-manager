@@ -6,7 +6,7 @@ import (
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/line/line-bot-sdk-go/linebot"
-	"github.com/ryomak/login-bonus-manager/src/line"
+	"github.com/ryomak/login-bonus-manager/line-bot/src/line"
 )
 
 func LineHandler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
