@@ -22,6 +22,7 @@ func LineHandler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyR
 	if err != nil {
 		log.Fatal(err)
 	}
+  line.MakeMessge(myLineRequest.Events[0].Message.ID, myLineRequest.Events[0].Message.Text)
 	var tmpReplyMessage string
 	if _, err = bot.ReplyMessage(myLineRequest.Events[0].ReplyToken, linebot.NewTextMessage(tmpReplyMessage)).Do(); err != nil {
 		log.Fatal(err)
