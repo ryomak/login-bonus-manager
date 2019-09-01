@@ -1,6 +1,12 @@
 package line
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"strings"
+	"time"
+
+	"github.com/ryomak/login-bonus-manager/line-bot/src/repository"
+)
 
 func UnmarshalLineRequest(data []byte) (LineRequest, error) {
 	var r LineRequest
@@ -34,4 +40,23 @@ type Message struct {
 type Source struct {
 	UserID string `json:"userId"`
 	Type   string `json:"type"`
+}
+
+func MakeMessge(id, str string) string {
+	if strings.Index(str, "一覧表示") != -1 {
+		homelist := repository.GetHomeList(id)
+		res := ""
+		for _, v := range homelist {
+			res += v.Valuea + "\n"
+		}
+		return res
+	}
+
+	repMessage := []string{
+		"できたのはすごいね",
+		"はやばすぎる",
+		"もうオンリーワンだね",
+	}
+	repository.SetHome(&Home{ID: id, Value: Value})
+	return "「" + repMessage[int(time.Now().UnixNano())/len(repMessage)] + "」"
 }
